@@ -3,17 +3,16 @@ class Solution {
         List<String> list=new ArrayList<>();
         
         HashSet<String> set=new HashSet<>();
-        HashMap<String,Boolean> map=new HashMap<>();
         for(String str : wordDict)
             set.add(str);
         
-        solve(s,set,map,list,"");
+        solve(s,set,list,"");
         return list;
         
     }
     
     
-    void solve(String s,HashSet<String> set,HashMap<String,Boolean> map,List<String> list,String sentence){
+    void solve(String s,HashSet<String> set,List<String> list,String sentence){
 //         if(map.containsKey(s))
 //             return map.get(s);
         
@@ -32,7 +31,7 @@ class Solution {
                     list.add(sentence);
                     return;
                 }
-                solve(s.substring(i+1),set,map,list,sentence+str+" ");
+                solve(s.substring(i+1),set,list,sentence+str+" ");
                 
             }
         }
