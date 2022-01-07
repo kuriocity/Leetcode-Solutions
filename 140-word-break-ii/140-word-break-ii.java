@@ -6,20 +6,20 @@ class Solution {
         for(String str : wordDict)
             set.add(str);
         
-        solve(s,set,list,"");
-        return list;
+       return solve(s,set);
+         //list;
         
     }
     
-    
-    void solve(String s,HashSet<String> set,List<String> list,String sentence){
+    //something should be returned if needs to be memoized!
+    List<String> solve(String s,HashSet<String> set){
 //         if(map.containsKey(s))
 //             return map.get(s);
         
 //         if(set.contains(s))
 //             return true;
         
-        
+        List<String> list=new ArrayList<>();
         for(int i=0;i<s.length();i++){
             
             String str=s.substring(0,i+1);
@@ -27,14 +27,18 @@ class Solution {
             if(set.contains(str)){
                 
                 if(i==s.length()-1){
-                    sentence+=str;
-                    list.add(sentence);
-                    return;
+                    list.add(str);
+                    return list;
                 }
-                solve(s.substring(i+1),set,list,sentence+str+" ");
+                List<String> rem=solve(s.substring(i+1),set);
+                for(String sentence:rem){
+                    list.add(str+" "+sentence);
+                }
                 
             }
         }
         //map.put(s,ans);
+        
+        return list;
     }
 }
