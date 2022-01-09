@@ -1,6 +1,6 @@
 class Solution {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        List<List<Integer>> list=new LinkedList<>();
+        //List<List<Integer>> list=new LinkedList<>();
         return solve(candidates,candidates.length-1, target);
     }
     
