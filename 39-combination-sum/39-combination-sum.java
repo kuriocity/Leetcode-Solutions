@@ -6,14 +6,14 @@ class Solution {
     }
     
     List<List<Integer>> solve(int[] arr,int index,int target,HashMap<String,List<List<Integer>>> map){
-        List<List<Integer>> list=new LinkedList<>();
+        List<List<Integer>> list=new ArrayList<>();
         
         if(map.containsKey(index+" "+target))
             return map.get(index+" "+target);
             
         if(index==-1){
             if(target==0)
-                list.add(new LinkedList<>());
+                list.add(new ArrayList<>());
             return list;
         }
         
@@ -21,7 +21,7 @@ class Solution {
             List<List<Integer>> list2 = solve(arr,index, target-arr[index],map);
             
             for(List<Integer> obj:list2){
-                List<Integer> t=new LinkedList<Integer>(obj);
+                List<Integer> t=new ArrayList<Integer>(obj);
                 t.add(arr[index]);
                 list.add(t);
             }
@@ -31,11 +31,11 @@ class Solution {
         }else{
             return solve(arr,index-1, target,map);
         }
-        List<List<Integer>> mapList=new LinkedList<>();
+        List<List<Integer>> mapList=new ArrayList<>();
         //mapList=new LinkedList<List<Integer>>(list).stream().map(l->new LinkedList<Integer>(l)).collect(Collectors.toList());
         
         for(List<Integer> l:list){
-            mapList.add(new LinkedList<>(l));
+            mapList.add(new ArrayList<>(l));
         }
         
         map.put(index+" "+target,mapList);
