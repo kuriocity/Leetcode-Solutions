@@ -26,7 +26,7 @@ class Solution {
                 list.add(t);
             }
             List<List<Integer>> list3 = solve(arr,index-1, target,map);
-            list.addAll(new LinkedList<>(list3));
+            list.addAll((list3));
             
         }else{
             return solve(arr,index-1, target,map);
