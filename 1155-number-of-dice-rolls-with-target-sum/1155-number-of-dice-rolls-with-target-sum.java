@@ -19,8 +19,8 @@ class Solution {
         
         int ans=0;
         for(int i=1;i<=k;i++){
-            
-            ans=(ans+solve(n-1,k,target-i,table))%1000000007;
+            if(i<=target)
+                ans=(ans+solve(n-1,k,target-i,table))%1000000007;
             
         }
         return table[n][target]=ans%1000000007;
