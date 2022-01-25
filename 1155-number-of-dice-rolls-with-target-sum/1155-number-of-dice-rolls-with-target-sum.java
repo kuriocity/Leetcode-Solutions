@@ -10,7 +10,7 @@ class Solution {
     int solve(int n, int k, int target,int [][]table){
         if(n==0 && target==0)
             return 1;
-        if(n==0 || target<=0)
+        if(n==0 || target<=0 || n*k<target )
             return 0;
   
             
