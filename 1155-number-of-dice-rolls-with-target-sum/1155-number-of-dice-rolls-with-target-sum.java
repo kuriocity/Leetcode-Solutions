@@ -21,6 +21,8 @@ class Solution {
         for(int i=1;i<=k;i++){
             if(i<=target)
                 ans=(ans+solve(n-1,k,target-i,table))%1000000007;
+            else
+                break;
             
         }
         return table[n][target]=ans%1000000007;
