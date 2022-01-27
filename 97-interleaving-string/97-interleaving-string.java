@@ -8,8 +8,7 @@ class Solution {
     boolean solve(String s1,int i, String s2,int j, String s3,int k){
         if(k==s3.length() && i==s1.length() && j==s2.length())
             return true;
-        if(k==s3.length())
-            return false;
+       
         
         boolean ans;
         if(map.containsKey(i+" "+j+" "+k)){
