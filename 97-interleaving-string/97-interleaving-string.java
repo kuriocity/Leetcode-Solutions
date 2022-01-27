@@ -14,8 +14,8 @@ class Solution {
             return false;
         
         boolean ans;
-        if(map.containsKey(i+" "+j+" "+k)){
-            return map.get(i+" "+j+" "+k);
+        if(map.containsKey(i+" "+j+" ")){
+            return map.get(i+" "+j+" ");
         }
         
         if(i<s1.length() && j<s2.length() && s1.charAt(i)==s2.charAt(j) && 
@@ -28,7 +28,7 @@ class Solution {
         else
             ans = false;
         
-        map.put(i+" "+j+" "+k,ans);
+        map.put(i+" "+j+" ",ans);
         
         return ans;
     }
